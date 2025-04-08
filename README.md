@@ -1,13 +1,13 @@
 # Patient Registration App
 
-Aplicación fullstack para registrar pacientes con foto de documento. Incluye frontend en React + TypeScript y backend en Node.js (Express) con persistencia en PostgreSQL.
+This project includes a **React + TypeScript frontend** and a **Node.js (Express) backend** with a **PostgreSQL database**.
 
 ---
 
-### 1. Clonar el repositorio
+### 1. Repository
 
 ```bash
-git clone https://github.com/tu_usuario/patient_registration.git
+git clone https://github.com/your_user/patient_registration.git
 cd patient_registration
 ```
 
@@ -15,7 +15,7 @@ cd patient_registration
 
 ### 2. Backend (`stack`)
 
-#### Levantar con Docker
+#### Run with Docker
 
 ```bash
 cd stack
@@ -23,11 +23,19 @@ cp .env.example .env
 docker compose up --build
 ```
 
-> El backend corre en: http://localhost:4000
+Additionally, we have a worker for sending emails:
+
+```bash
+npm run email-worker
+```
+
+Run it from the `stack` directory.
+
+> The backend runs at: http://localhost:4000
 
 ---
 
-Además, al iniciar por primera vez, **se ejecuta automáticamente el script `db/init.sql`** que crea la tabla `patients` si no existe:
+On first launch, the following script `db/init.sql` is automatically executed to **create the `patients` table if it does not exist**:
 
 ```sql
 CREATE TABLE IF NOT EXISTS patients (
@@ -51,11 +59,11 @@ npm install
 npm start
 ```
 
-> El frontend corre en: http://localhost:3000
+> The frontend runs at: http://localhost:3000
 
 ---
 
-## ⚙️ Variables de entorno
+## ⚙️ Environment Variables
 
 ### stack/.env
 
@@ -67,8 +75,8 @@ DB_USER=postgres
 DB_PASSWORD=postgres
 DB_NAME=patients_db
 
-MAILTRAP_USER='mailtrapUser'
-MAILTRAP_PASS='mailtrapPass'
+MAILTRAP_USER=your_mailtrap_user
+MAILTRAP_PASS=your_mailtrap_pass
 REDIS_HOST=redis
 REDIS_PORT=6379
 ```
@@ -83,5 +91,3 @@ DB_USER=postgres
 DB_PASSWORD=postgres
 DB_NAME=patients_db
 ```
-
----
