@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom';
+import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import PatientCard from "../PatientCard";
 import { Patient } from "../../types/Patient";
@@ -23,7 +23,11 @@ describe("PatientCard", () => {
     render(<PatientCard patient={patient} />);
     fireEvent.click(screen.getByText("View details"));
 
-    expect(screen.getByText((t) => t.includes("johndoe@gmail.com"))).toBeInTheDocument();
-    expect(screen.getByText((t) => t.includes("+598 12345678"))).toBeInTheDocument();
+    expect(
+      screen.getByText((t) => t.includes("johndoe@gmail.com")),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText((t) => t.includes("+598 12345678")),
+    ).toBeInTheDocument();
   });
 });

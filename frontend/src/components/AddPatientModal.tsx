@@ -5,7 +5,10 @@ interface AddPatientModalProps {
   onPatientAdded: () => void;
 }
 
-export default function AddPatientModal({ onClose, onPatientAdded }: AddPatientModalProps) {
+export default function AddPatientModal({
+  onClose,
+  onPatientAdded,
+}: AddPatientModalProps) {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [countryCode, setCountryCode] = useState("+598");
@@ -64,17 +67,21 @@ export default function AddPatientModal({ onClose, onPatientAdded }: AddPatientM
     }
   };
 
-
   return (
     <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-6 relative">
-        <button className="absolute top-4 right-4 text-slate-500 text-lg" onClick={onClose}>
+        <button
+          className="absolute top-4 right-4 text-slate-500 text-lg"
+          onClick={onClose}
+        >
           &times;
         </button>
         <h2 className="text-2xl mb-4">Add Patient</h2>
 
         <div className="mb-4">
-          <label htmlFor="fullName" className="block">Full Name</label>
+          <label htmlFor="fullName" className="block">
+            Full Name
+          </label>
           <input
             id="fullName"
             type="text"
@@ -82,11 +89,15 @@ export default function AddPatientModal({ onClose, onPatientAdded }: AddPatientM
             onChange={(e) => setFullName(e.target.value)}
             className="w-full border rounded px-3 py-2"
           />
-          {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName}</p>}
+          {errors.fullName && (
+            <p className="text-red-500 text-sm">{errors.fullName}</p>
+          )}
         </div>
 
         <div className="mb-4">
-          <label htmlFor="email" className="block">Email</label>
+          <label htmlFor="email" className="block">
+            Email
+          </label>
           <input
             id="email"
             type="email"
@@ -94,12 +105,16 @@ export default function AddPatientModal({ onClose, onPatientAdded }: AddPatientM
             onChange={(e) => setEmail(e.target.value)}
             className="w-full border rounded px-3 py-2"
           />
-          {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+          {errors.email && (
+            <p className="text-red-500 text-sm">{errors.email}</p>
+          )}
         </div>
 
         <div className="mb-4 flex gap-2">
           <div className="w-1/3">
-            <label htmlFor="countryCode" className="block">Code</label>
+            <label htmlFor="countryCode" className="block">
+              Code
+            </label>
             <input
               id="countryCode"
               type="text"
@@ -109,7 +124,9 @@ export default function AddPatientModal({ onClose, onPatientAdded }: AddPatientM
             />
           </div>
           <div className="w-2/3">
-            <label htmlFor="phoneNumber" className="block">Phone</label>
+            <label htmlFor="phoneNumber" className="block">
+              Phone
+            </label>
             <input
               id="phoneNumber"
               type="text"
@@ -117,12 +134,16 @@ export default function AddPatientModal({ onClose, onPatientAdded }: AddPatientM
               onChange={(e) => setPhoneNumber(e.target.value)}
               className="w-full border rounded px-3 py-2"
             />
-            {errors.phoneNumber && <p className="text-red-500 text-sm">{errors.phoneNumber}</p>}
+            {errors.phoneNumber && (
+              <p className="text-red-500 text-sm">{errors.phoneNumber}</p>
+            )}
           </div>
         </div>
 
         <div className="mb-6">
-          <label htmlFor="documentPhoto" className="block">Document Photo (.jpg)</label>
+          <label htmlFor="documentPhoto" className="block">
+            Document Photo (.jpg)
+          </label>
           <input
             id="documentPhoto"
             type="file"
