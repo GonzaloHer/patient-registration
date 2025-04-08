@@ -63,7 +63,7 @@ npm start
 
 ---
 
-## ⚙️ Environment Variables
+## Env Variables
 
 ### stack/.env
 
